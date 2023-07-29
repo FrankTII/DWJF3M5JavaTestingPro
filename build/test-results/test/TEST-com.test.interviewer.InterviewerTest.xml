@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.test.interviewer.InterviewerTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2023-07-29T06:34:15" hostname="MMsi" time="0.015">
+<testsuite name="com.test.interviewer.InterviewerTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2023-07-29T07:23:32" hostname="MMsi" time="0.025">
   <properties/>
-  <testcase name="add()" classname="com.test.interviewer.InterviewerTest" time="0.011"/>
+  <testcase name="delete()" classname="com.test.interviewer.InterviewerTest" time="0.012"/>
+  <testcase name="add()" classname="com.test.interviewer.InterviewerTest" time="0.004"/>
+  <testcase name="save()" classname="com.test.interviewer.InterviewerTest" time="0.003"/>
   <testcase name="getByNonExistingEmail()" classname="com.test.interviewer.InterviewerTest" time="0.001"/>
   <testcase name="getByEmail()" classname="com.test.interviewer.InterviewerTest" time="0.001"/>
-  <system-out><![CDATA[]]></system-out>
+  <system-out><![CDATA[1
+1
+]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
