@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.test.interviewer.InterviewerTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2023-07-29T05:57:30" hostname="MMsi" time="0.016">
+<testsuite name="com.test.interviewer.InterviewerTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2023-07-29T06:34:15" hostname="MMsi" time="0.015">
   <properties/>
-  <testcase name="add()" classname="com.test.interviewer.InterviewerTest" time="0.012"/>
+  <testcase name="add()" classname="com.test.interviewer.InterviewerTest" time="0.011"/>
   <testcase name="getByNonExistingEmail()" classname="com.test.interviewer.InterviewerTest" time="0.001"/>
   <testcase name="getByEmail()" classname="com.test.interviewer.InterviewerTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
