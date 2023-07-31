@@ -4,11 +4,11 @@
 
 ### 🎯 OBJETIVOS
 
-- Desarrollen funcionalidad adicional a nuestro programa.
-- Agreguen pruebas unitarias adicionales para probar su funcionalidad.
-- Apliquen técnicas de diseño de pruebas.
-- Utilicen la herramienta JUNIT.
-- Realicen integración continua con Github
+- Desarrollar funcionalidad adicional a nuestro programa.
+- Agregar pruebas unitarias adicionales para probar su funcionalidad.
+- Aplicar técnicas de diseño de pruebas.
+- Utilizar la herramienta JUNIT.
+- Realizar integración continua con Github
 
 ### 🚀 DESARROLLO
 
