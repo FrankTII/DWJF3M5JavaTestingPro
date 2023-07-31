@@ -1,22 +1,3 @@
-target/**
-**/*target*
-Sesion-07/target/**
-
-#Del Repo de Expert
-.vscode/
-**/*/.gradle
-#**/*/build
-**/*/.DS_Store
-
-**/*/gradle/**
-**/*/gradlew
-**/*/.gradlew.bat
-**/*/.idea/**
-
-# Default ignored files
-/shelf/
-/workspace.xml
-
 # Created by https://www.toptal.com/developers/gitignore/api/gradle,java,intellij+all,visualstudiocode
 # Edit at https://www.toptal.com/developers/gitignore?templates=gradle,java,intellij+all,visualstudiocode
 
@@ -535,3 +516,23 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+
+target/**
+**/*target*
+Sesion-07/target/**
+
+#Del Repo de Expert
+.vscode/
+**/*/.gradle
+#**/*/build
+**/*/.DS_Store
+
+**/*/gradle/**
+**/*/gradlew
+**/*/.gradlew.bat
+**/*/.idea/**
+
+# Default ignored files
+/shelf/
+/workspace.xml
+
