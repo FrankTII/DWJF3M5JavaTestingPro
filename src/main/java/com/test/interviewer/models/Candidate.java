@@ -1,5 +1,5 @@
 package com.test.interviewer.models;
-
+//Copy from model Interviewer
 import java.io.*;
 import java.util.ArrayList;
 

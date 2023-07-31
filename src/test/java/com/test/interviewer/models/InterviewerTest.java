@@ -1,4 +1,4 @@
-package com.test.interviewer;
+package com.test.interviewer.models;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -22,6 +22,7 @@ public class InterviewerTest {
                 existingInterviewerName,
                 existingInterviewerLastName,
                 existingInterviewerEmail,
+                true,
                 true
         ));
     }
@@ -32,6 +33,7 @@ public class InterviewerTest {
                 "Test",
                 "User",
                 "any@email.com",
+                true,
                 true
         );
 
@@ -52,7 +54,7 @@ public class InterviewerTest {
         String expectedLastName = "New";
         Interviewer existingInterviewer = Interviewer.data.get(0);
         System.out.println(Interviewer.data.size());
-        existingInterviewer.save("", expectedLastName, "", true);
+        existingInterviewer.save("", expectedLastName, "", true,true);
 
         int newListSize = Interviewer.data.size();
         System.out.println(Interviewer.data.size());

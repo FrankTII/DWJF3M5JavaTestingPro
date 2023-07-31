@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.test.interviewer.models.DisciplineTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2023-07-31T04:30:13" hostname="MMsi" time="0.006">
+  <properties/>
+  <testcase name="getByNonExistingDescription()" classname="com.test.interviewer.models.DisciplineTest" time="0.001"/>
+  <testcase name="getByDescription()" classname="com.test.interviewer.models.DisciplineTest" time="0.001"/>
+  <testcase name="delete()" classname="com.test.interviewer.models.DisciplineTest" time="0.001"/>
+  <testcase name="add()" classname="com.test.interviewer.models.DisciplineTest" time="0.001"/>
+  <testcase name="save()" classname="com.test.interviewer.models.DisciplineTest" time="0.0"/>
+  <system-out><![CDATA[1
+1
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

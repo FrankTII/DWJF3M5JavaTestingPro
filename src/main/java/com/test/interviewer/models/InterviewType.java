@@ -1,5 +1,5 @@
 package com.test.interviewer.models;
-
+//Copy from model Interviewer
 import java.io.*;
 import java.util.ArrayList;
 
@@ -8,6 +8,9 @@ public class InterviewType  implements Serializable {
 
     int id;
     String name;
+    /*A slug is a human-readable, unique identifier,
+            used to identify a resource instead of a less human-readable
+            identifier like an id */
     String slug;
     String description;
 

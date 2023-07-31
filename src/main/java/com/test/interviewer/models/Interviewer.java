@@ -1,10 +1,12 @@
-package com.test.interviewer;
-
+package com.test.interviewer.models;
+//Base model PW1
 import java.io.*;
 import java.util.ArrayList;
 
 public class Interviewer implements Serializable {
-    static ArrayList<Interviewer> data;
+
+    //al mover a model package solicita tipo : public
+    public static ArrayList<Interviewer> data;
 
     int id;
     String name;
