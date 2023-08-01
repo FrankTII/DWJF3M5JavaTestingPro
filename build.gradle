@@ -1,21 +1,51 @@
 plugins {
-    id 'java'
+    id 'application'
+    id "se.thinkcode.cucumber-runner" version "0.0.11"
 }
-
-group 'org.example'
+group 'com.test'
 version '1.0-SNAPSHOT'
+sourceCompatibility = '17'
 
 repositories {
     mavenCentral()
 }
-
-dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+configurations {
+    cucumberRuntime {
+        extendsFrom testImplementation
+    }
 }
-
-
+task cucumberCli() {
+    dependsOn assemble, testClasses
+    doLast {
+        javaexec {
+            main = "io.cucumber.core.cli.Main"
+            classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
+            args = [
+                    '--plugin', 'pretty',
+                    '--plugin', 'html:target/cucumber-report.html',
+                    '--glue', 'classpath:com.test.interviewer.stepdefinitions',
+                    'src/test/resources']
+        }
+    }
+}
+/*cucumber {
+    glue = "classpath:com.test.interviewer.stepdefinitions"
+    main = "io.cucumber.core.cli.Main"
+}
+*/
 test {
     useJUnitPlatform()
     systemProperty 'junit.jupiter.execution.parallel.enabled', 'true'
+    scanForTestClasses = false
 }
+
+
+dependencies {
+    implementation 'io.cucumber:cucumber-java:7.13.0'
+    implementation 'io.cucumber:cucumber-junit:7.13.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.3'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+    testRuntimeOnly 'org.junit.vintage:junit-vintage-engine'
+
+}
+

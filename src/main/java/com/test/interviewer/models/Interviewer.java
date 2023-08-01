@@ -12,7 +12,7 @@ import java.util.regex.Pattern;
 public class Interviewer implements Serializable {
 
     //al mover a model package solicita tipo : public
-    public static ArrayList<Interviewer> data;
+    public static ArrayList<Interviewer> data = new ArrayList<>();
 
     private int id;
     String name;
