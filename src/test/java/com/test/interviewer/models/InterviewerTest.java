@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
+import com.test.interviewer.exceptions.TooShortInputDataException;
+import com.test.interviewer.exceptions.InvalidEmailException;
 
 
 public class InterviewerTest {
@@ -29,24 +31,29 @@ public class InterviewerTest {
 
     @Test
     public void add() {
-        Interviewer interviewer = new Interviewer(
-                "Test",
-                "User",
-                "any@email.com",
-                true,
-                true
-        );
+        try {
+            Interviewer interviewer = new Interviewer(
+                    "Test",
+                    "User",
+                    "any@email.com",
+                    true,
+                    true
+            );
 
-        interviewer.add();
+            interviewer.add();
 
-        int expectedId = Interviewer.data.size();
-        assertEquals(
-                expectedId,
-                interviewer.id,
-                "Interviewer ID should be the new List's size"
-        );
+            int expectedId = Interviewer.data.size();
+            assertEquals(
+                    expectedId,
+                    interviewer.getId(),
+                    "Interviewer ID should be the new List's size"
+            );
+        } catch (TooShortInputDataException e) {
+            fail("Unexpected Exception received: " + e.getMessage());
+        } catch (InvalidEmailException e) {
+            fail("Unexpected Exception received: " + e.getMessage());
+        }
     }
-
 
     @Test
     public void save() {
@@ -54,29 +61,36 @@ public class InterviewerTest {
         String expectedLastName = "New";
         Interviewer existingInterviewer = Interviewer.data.get(0);
         System.out.println(Interviewer.data.size());
-        existingInterviewer.save("", expectedLastName, "", true,true);
+        try {
+            existingInterviewer.save(existingInterviewer.name, expectedLastName, existingInterviewer.email, true, true);
 
-        int newListSize = Interviewer.data.size();
-        System.out.println(Interviewer.data.size());
-        int lastInterviewerIndex = newListSize - 1;
-        Interviewer latestInterviewer = Interviewer.data.get(lastInterviewerIndex);
+            int newListSize = Interviewer.data.size();
+            System.out.println(Interviewer.data.size());
+            int lastInterviewerIndex = newListSize - 1;
+            Interviewer latestInterviewer = Interviewer.data.get(lastInterviewerIndex);
 
-        assertEquals(
-                originalListSize,
-                newListSize,
-                "List size should be the same"
-        );
-        assertEquals(
-                expectedLastName,
-                latestInterviewer.lastName,
-                "Last Name should have been updated"
-        );
-        assertEquals(
-                existingInterviewer.name,
-                latestInterviewer.name,
-                "Name should have not been updated"
-        );
+            assertEquals(
+                    originalListSize,
+                    newListSize,
+                    "List size should be the same"
+            );
+            assertEquals(
+                    expectedLastName,
+                    latestInterviewer.lastName,
+                    "Last Name should have been updated"
+            );
+            assertEquals(
+                    existingInterviewer.name,
+                    latestInterviewer.name,
+                    "Name should have not been updated"
+            );
+        } catch (TooShortInputDataException e) {
+            fail("Unexpected Exception received: " + e.getMessage());
+        } catch (InvalidEmailException e) {
+            fail("Unexpected Exception received: " + e.getMessage());
+        }
     }
+
 
     @Test
     public void getByEmail() {

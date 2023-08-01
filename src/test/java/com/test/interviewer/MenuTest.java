@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class MenuTest {
     private final InputStream systemIn = System.in;
     private final PrintStream systemOut = System.out;
-    private final String exitCommand = "5 \n";
+    private final String exitCommand = "6 \n";
 
     private ByteArrayInputStream testIn;
     private ByteArrayOutputStream testOut;
@@ -45,8 +45,8 @@ public class MenuTest {
     public void addNewInterviewer() {
         final String interviewerName = "Interviewer Name";
         final String interviewerLastName = "Interviewer Lastname";
-        final String interviewerEmail = "Interviewer Email";
-        final String addNewInterviewerCommand = "1 \n " + interviewerName + " \n " + interviewerLastName + " \n " + interviewerEmail + " \n 1 \n" + " \n 1 \n"+ exitCommand;
+        final String interviewerEmail = "interviewer@mail.net";
+        final String addNewInterviewerCommand = "1 \n " + interviewerName + " \n " + interviewerLastName + " \n " + interviewerEmail + " \n 1 \n" + " \n 1 \n" + exitCommand;
         provideInput(addNewInterviewerCommand);
 
         Menu.main(new String[0]);
@@ -62,7 +62,7 @@ public class MenuTest {
         final String interviewerName = "Interviewer Name";
         final String interviewerLastName = "Interviewer Lastname";
         final String interviewerEmail = "interviewer@mail.com";
-        final String addNewInterviewerCommand = "1 \n " + interviewerName + " \n " + interviewerLastName + " \n " + interviewerEmail + " \n 1 \n"+ " \n 1 \n";
+        final String addNewInterviewerCommand = "1 \n " + interviewerName + " \n " + interviewerLastName + " \n " + interviewerEmail + "\n1\n"+ "\n2\n" ;
         final String getInterviewerCommand = "2 \n " + interviewerEmail + "\n ";
         provideInput(addNewInterviewerCommand + getInterviewerCommand + exitCommand);
 

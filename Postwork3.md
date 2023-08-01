@@ -46,5 +46,3 @@ Para cerrar nuestro postwork, revisemos el siguiente video que realiza un benchm
 ¿Creen que existe alguna desventaja de ejecutar nuestras pruebas en paralelo?
 - Algunas que sean dependientes de otros procesos tomaran tiempo.
 
-
-¡Mucho éxito y reta tu potencial!
