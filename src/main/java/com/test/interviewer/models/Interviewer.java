@@ -2,13 +2,19 @@ package com.test.interviewer.models;
 //Base model PW1
 import java.io.*;
 import java.util.ArrayList;
+//ExceptionsPWK4 cucumber Validatios
+import com.test.interviewer.exceptions.TooShortInputDataException;
+import com.test.interviewer.exceptions.InvalidEmailException;
+//Regex
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Interviewer implements Serializable {
 
     //al mover a model package solicita tipo : public
     public static ArrayList<Interviewer> data;
 
-    int id;
+    private int id;
     String name;
     String lastName;
     String email;
@@ -16,13 +22,25 @@ public class Interviewer implements Serializable {
 
     Boolean isAdmin;
 
+    public int getId() {
+        return id;
+    }
+
     public Interviewer(
             String name,
             String lastName,
             String email,
             Boolean isActive,
             Boolean isAdmin
-    ) {
+    ) throws TooShortInputDataException, InvalidEmailException {
+        if (name.length() < 3 || lastName.length() < 3) {
+            throw new TooShortInputDataException("Name and Last Name must have at least 3 characters");
+        }
+
+        if (!isValidEmail(email)) {
+            throw new InvalidEmailException("Invalid email format");
+        }
+
         this.id = data.size() + 1;
         this.name = name;
         this.lastName = lastName;
@@ -54,7 +72,15 @@ public class Interviewer implements Serializable {
             String email,
             Boolean isActive,
             Boolean isAdmin
-    ) {
+    ) throws TooShortInputDataException, InvalidEmailException {
+        if (name.length() < 3 || lastName.length() < 3) {
+            throw new TooShortInputDataException("Name and Last Name must have at least 3 characters");
+        }
+
+        if (!isValidEmail(email)) {
+            throw new InvalidEmailException("Invalid email format");
+        }
+
         try {
             this.delete();
         } catch (Exception e) {
@@ -114,6 +140,8 @@ public class Interviewer implements Serializable {
 
     public static void loadDataFromFile() {
         try {
+            //Logging view Datafile contents
+            System.out.println("Loading data from file...");
             FileInputStream fileInputStream = new FileInputStream("./interviewers");
             ObjectInputStream inputStream = new ObjectInputStream(fileInputStream);
 
@@ -128,5 +156,19 @@ public class Interviewer implements Serializable {
             if (!e.getMessage().contains("No such file or directory"))
                 e.printStackTrace();
         }
+    }
+
+    private boolean isValidName(String name) {
+        return name != null && name.length() >= 3;
+    }
+
+    private boolean isValidEmail(String email) {
+        // Regular expression pattern for email validation
+        String emailRegex = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$";
+
+        Pattern pattern = Pattern.compile(emailRegex);
+        Matcher matcher = pattern.matcher(email);
+
+        return matcher.matches();
     }
 }
