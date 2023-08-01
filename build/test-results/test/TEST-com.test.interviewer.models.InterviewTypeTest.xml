@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.test.interviewer.models.InterviewTypeTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2023-07-31T05:54:42" hostname="MMsi" time="0.006">
+<testsuite name="com.test.interviewer.models.InterviewTypeTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2023-08-01T10:45:17" hostname="MMsi" time="0.008">
   <properties/>
   <testcase name="getByNonExistingDescription()" classname="com.test.interviewer.models.InterviewTypeTest" time="0.001"/>
   <testcase name="getByDescription()" classname="com.test.interviewer.models.InterviewTypeTest" time="0.0"/>
